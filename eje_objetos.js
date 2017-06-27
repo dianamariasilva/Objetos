@@ -37,17 +37,23 @@ if (x.edad>17 && x.genero == "femenino"){
     console.log (respuesta);
 
   //ejercicio3
-  function Propiedades(prop1, prop2, prop3, prop4, prop5, prop6){
-   this.prop1 = prop1;
-   this.prop2 = prop2;
-   this.prop3 = prop3;
-   this.prop4 = prop4;
-   this.prop5 = prop5;
-   this.prop6 = prop6;
-   };
-  var propiedad= new Propiedades(6,5,4,3,2,1);
+  var array = [6,5,4,3,2,1]
+  var objeto= {};
+  array.forEach(function(valor, indice){
+    objeto["propiedad"+(indice+1)] = valor;
+  });
+  var x= Object.keys(objeto);
+  var resultado = "";
 
-     console.log("propiedad1-->"+ propiedad.prop1+ ":propiedad2-->"+ propiedad.prop2+ ":propiedad3-->" + propiedad.prop3 + ":propiedad4-->"+ propiedad.prop4 + ":propiedad5-->" + propiedad.prop5 + ":propiedad6-->" + propiedad.prop6 )
+  for(var i in objeto)
+    {
+      console.log(i + objeto[i]);
+      resultado += i + "-->" + objeto[i] + ";";
+    }
+   resultado = resultado.slice(0,-1);
+   console.log (resultado);
+
+
 
 //ejercicio4
 function Ficha (nombre, apellido, edad, genero, ciudad, pais){
@@ -62,3 +68,4 @@ var ficha1 = new Ficha ("Diana María", "Silva", 22, "femenino", "Arequipa", "Pe
   console.log("Nombre: "+ ficha1.nombre+ " "+ ficha1.apellido);
   console.log("Edad: "+ ficha1.edad);
   console.log("Pais: "+ ficha1.pais);
+*/
